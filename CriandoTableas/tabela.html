@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta name="autor"  content="KIRITO">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela Exemplar</title>
+    
+</head>
+<body>
+    
+    <!--#########################################################################################################################################################################
+        #############  Tags usadas para criar tabelas    ####################################################################################################################### 
+        #########################################################################################################################################################################
+        
+        <table></table> =  Usado para fazer organizaçao de dados via linha e colunas , tem boa acessibilidade para leitura de dados Só que é puco flexivel nao se adapta a todo tipo de layout e precisa de estilização para  melhor visualização, nao se usa para criar layout.
+
+        <tr></tr> = "table roll" usado para criar uma linha na tabela 
+        <th></th> = usado dentro da tag "tr" serve para criar um cabeçalho
+        <td></td> = Conteúdo de cada coluna 
+        <thead></thead> = usada para organizar o cabeçalho
+        <tbody></tbody> = usado pra organizar o conteudo do corpo, ou seja, da coluna
+        <tfoot></tfoot> = usado pra fazer o rodapé   
+        <caption></caption> = usado pra descrever a tabela, diz o que ela ta fazendo
+
+        #####################################################################################################################################################################################  EXEMPLO TABELA SIMPLES: ################################################################################################################################## #########################################################################################################################################################################
+                    
+    -->
+    
+
+    <table>
+        <caption>Pessoas por idade</caption>
+
+        <thead>
+
+            <tr>
+                <th>Nome</th>
+                <th>Idade</th>
+            </tr> 
+                      
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>KIRITO</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>FRANCK</td>
+                <td>26</td>
+            </tr>
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <td>Total:</td>
+                <td>2 pessoas</td>
+            </tr>
+        </tfoot>        
+    </table>
+    
+    
+    <!--
+        #################################################################################################################################################################################### EXEMPLO de TABELA COMPLEXA: 100% acessivel e legível ####################################################################################################### #########################################################################################################################################################################
+        #########################################################
+        ##### Atributos usados para organizar tabela por : ######
+        #########################################################
+
+        rowspan="qtd linhas"  =  usado para ocupar/preecher linhas
+        colspan="qtd colunas" = usado para ocupar/preencher colunas
+        span= prenncrimento/ocupaçao
+
+        esse atributo "scope" serve para definir a estrutura da tabela para os leitores de tela/ motores de buscascope="col" identificar o que é um grupo de coluna,linha,coluna.
+        cada coluna e linha tem um "scope"
+
+        scope="colgroup" = grupo de colunas
+        scope="col" = representa o cabeçalho como colunas
+        scope="row" = identifica como um scopo de linha 
+
+        #########################################################################################################################################################################
+        ######  tags:  ############################################
+        ###########################################################
+
+        <colgroup></colgroup>= usado para agrupar colunas
+        <col> = representa cada coluna
+
+    --> 
+        
+        
+    <table>
+
+        <caption>Produzido X Vendido por Loja </caption>
+
+        <colgroup>
+            <col style="background-color: green;">
+            <col span="2" style="background-color: blue;">
+            <col span="2" style="background-color: red;">        
+        </colgroup>
+
+        <thead>
+            <tr>
+                <th rowspan="2" style="color: yellow;">Produtos</th>
+                <th colspan="2" scope="colgroup" >Loja Souza</th>
+                <th colspan="2" scope="colgroup" >Loja Tarabal</th>
+            </tr>
+            <tr>
+                <th scope="col">Produzidos</th>
+                <th scope="col">Vendidos</th>
+                <th scope="col">Produzidos</th>
+                <th scope="col">Vendidos</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">SAPATOS</th>
+                <th>50</th>
+                <th>30</th>
+                <th>60</th>
+                <th>60</th>
+            </tr>
+            <tr>
+                <th scope="row">MOCHILAS</th>
+                <th>60</th>
+                <th>55</th>
+                <th>50</th>
+                <th>20</th>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+    
+</body>
+</html>
